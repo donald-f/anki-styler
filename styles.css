@@ -73,3 +73,12 @@ button {
 #clearButton:hover {
   background-color: #4c4c4c;
 }
+
+#showHtmlOutputPreviewButton {
+  background-color: #000a92;
+  color: white;
+}
+
+#showHtmlOutputPreviewButton:hover {
+  background-color: #02096e;
+}

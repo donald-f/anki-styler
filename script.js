@@ -2,6 +2,9 @@
 
 document.getElementById("processButton").addEventListener("click", processHtml);
 document.getElementById("clearButton").addEventListener("click", clearHtml);
+document
+  .getElementById("showHtmlOutputPreviewButton")
+  .addEventListener("click", previewHtml);
 
 function processHtml() {
   const inputHtml = document.getElementById("inputHtml").value;
@@ -156,6 +159,37 @@ function applyTableStyles(element) {
 function clearHtml() {
   document.getElementById("inputHtml").value = "";
   document.getElementById("outputHtml").value = "";
+}
+
+function previewHtml() {
+  const htmlContent = document.getElementById("outputHtml").value;
+  // Open a new tab
+  const newTab = window.open();
+
+  // Write the HTML content into the new tab
+  if (newTab) {
+    newTab.document.open();
+    newTab.document.write(htmlContent);
+    newTab.document.close();
+  } else {
+    alert("Pop-ups are blocked. Please allow pop-ups for this website.");
+  }
+}
+
+function replaceWithNewHTML() {
+  // Select the <link> tag by its href attribute
+  const stylesheetLink = document.querySelector(
+    'link[rel="stylesheet"][href="styles.css"]'
+  );
+
+  // Remove the <link> tag if it exists
+  if (stylesheetLink) {
+    stylesheetLink.remove();
+    console.log("Stylesheet removed!");
+  } else {
+    console.log("Stylesheet not found!");
+  }
+  document.body.innerHTML = document.getElementById("outputHtml").value;
 }
 
 function applyListStyles(element) {
