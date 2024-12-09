@@ -47,8 +47,6 @@ textarea {
 }
 
 button {
-  background-color: #5cb85c;
-  color: white;
   border: none;
   padding: 10px 15px;
   font-size: 16px;
@@ -58,6 +56,20 @@ button {
   width: 100%;
 }
 
-button:hover {
+#processButton {
+  background-color: #5cb85c;
+  color: white;
+}
+
+#processButton:hover {
   background-color: #4cae4c;
+}
+
+#clearButton {
+  background-color: #585858;
+  color: white;
+}
+
+#clearButton:hover {
+  background-color: #4c4c4c;
 }

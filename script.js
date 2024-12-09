@@ -1,6 +1,7 @@
 // script.js
 
 document.getElementById("processButton").addEventListener("click", processHtml);
+document.getElementById("clearButton").addEventListener("click", clearHtml);
 
 function processHtml() {
   const inputHtml = document.getElementById("inputHtml").value;
@@ -150,6 +151,11 @@ function applyTableStyles(element) {
       }
     }
   });
+}
+
+function clearHtml() {
+  document.getElementById("inputHtml").value = "";
+  document.getElementById("outputHtml").value = "";
 }
 
 function applyListStyles(element) {
