@@ -48,8 +48,8 @@ function applyTailoredStyles(element) {
     applyLinkStyles(element);
   } else if (["TABLE", "TH", "TD", "TR"].includes(element.tagName)) {
     applyTableStyles(element);
-  } else if (["EM", "B"].includes(element.tagName)) {
-    applyBoldAndItalicsStyles(element);
+  } else if (["EM", "B", "STRONG"].includes(element.tagName)) {
+    applyInheritOnlyStyles(element);
   } else {
     applyGeneralStyles(element);
   }
@@ -83,7 +83,7 @@ function applyHeadingStyles(element) {
   });
 }
 
-function applyBoldAndItalicsStyles(element) {
+function applyInheritOnlyStyles(element) {
   const styles = {
     color: "inherit",
   };
